@@ -5,6 +5,9 @@ let qtdeInferior = document.getElementById('qtd-inferior');
 function comprar(){
     let qtdeSelecionada =document.getElementById('qtd').value;
     let ingressoSelecionado = document.getElementById('tipo-ingresso').value;
+    if(qtdeSelecionada<=0){
+        alert('Quantidade Inválida');
+    }else{
     if (ingressoSelecionado == 'inferior'){
         if(qtdeSelecionada > qtdeInferior.textContent){
             alert(`Quantidade indisponível, você pode selecionar no máximo ${qtdeInferior.textContent}`);
@@ -36,5 +39,6 @@ function comprar(){
                 alert('Compra Realizada com Sucesso');
             };
         };
+    };
     };
 };
